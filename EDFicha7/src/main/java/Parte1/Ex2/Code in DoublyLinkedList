@@ -1,0 +1,25 @@
+    // Método recursivo para imprimir os elementos da lista
+    public String printListRecursiveFromFirst(DoubleNode<T> node) {
+        if (node == null) {  // Caso base: se o nó for null, fim da lista
+            return "";
+        }
+        return node.getElement() + ", " + printListRecursiveFromFirst(node.getNext());     // Chama recursivamente para o próximo nó
+    }
+
+    public String printListRecursiveFLast(DoubleNode<T> node) {
+
+        if (node == null) {  // Caso base: se o nó for null, fim da lista
+            return  "";
+        }
+        return node.getElement() + ", " + printListRecursiveFLast(node.getPrevious());     // Chama recursivamente para o próximo nó
+    }
+
+    // Método auxiliar para iniciar a chamada recursiva a partir do primeiro nó
+    public String printListFromFirst() {
+        return printListRecursiveFromFirst(this.first);  // Chama o método recursivo começando do head
+    }
+
+    // Método auxiliar para iniciar a chamada recursiva a partir do ultimo nó
+    public String printListFromLast() {
+        return printListRecursiveFLast(this.last);  // Chama o método recursivo começando do head
+    }

@@ -1,0 +1,13 @@
+    // Método recursivo para imprimir os elementos da lista
+    public void printListRecursive(LinearNode<T> node) {
+        if (node == null) {  // Caso base: se o nó for null, fim da lista
+            return;
+        }
+        System.out.print(node.getElement());  // Imprime o elemento atual
+        printListRecursive(node.getNext());     // Chama recursivamente para o próximo nó
+    }
+
+    // Método auxiliar para iniciar a chamada recursiva a partir do primeiro nó
+    public void printList() {
+        printListRecursive(this.head);  // Chama o método recursivo começando do head
+    }
